@@ -27,5 +27,7 @@ namespace pekseg
         {
             return nev + " (" + ar + " Ft / db)";
         }
+
+
     }
 }

@@ -31,22 +31,22 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab1 = new System.Windows.Forms.TabPage();
             this.tab2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_pekaruNev = new System.Windows.Forms.TextBox();
+            this.num_ar = new System.Windows.Forms.NumericUpDown();
+            this.bttn_pekaruHozza = new System.Windows.Forms.Button();
+            this.checkBox_Laktoz = new System.Windows.Forms.CheckBox();
+            this.bttn_peksegHozz = new System.Windows.Forms.Button();
+            this.bttn_pekaruTorol = new System.Windows.Forms.Button();
+            this.bttn_peksegPekaruHozz = new System.Windows.Forms.Button();
+            this.txt_peksegNev = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.list_pekaru = new System.Windows.Forms.ListBox();
+            this.list_pekseg = new System.Windows.Forms.ListBox();
+            this.list_peksegPekaru = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tab1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_ar)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,19 +61,19 @@
             // 
             // tab1
             // 
+            this.tab1.Controls.Add(this.list_peksegPekaru);
+            this.tab1.Controls.Add(this.list_pekseg);
+            this.tab1.Controls.Add(this.list_pekaru);
+            this.tab1.Controls.Add(this.label2);
             this.tab1.Controls.Add(this.label1);
-            this.tab1.Controls.Add(this.textBox2);
-            this.tab1.Controls.Add(this.button5);
-            this.tab1.Controls.Add(this.button4);
-            this.tab1.Controls.Add(this.button3);
-            this.tab1.Controls.Add(this.button2);
-            this.tab1.Controls.Add(this.listView3);
-            this.tab1.Controls.Add(this.listView2);
-            this.tab1.Controls.Add(this.listView1);
-            this.tab1.Controls.Add(this.checkBox1);
-            this.tab1.Controls.Add(this.button1);
-            this.tab1.Controls.Add(this.numericUpDown1);
-            this.tab1.Controls.Add(this.textBox1);
+            this.tab1.Controls.Add(this.txt_peksegNev);
+            this.tab1.Controls.Add(this.bttn_peksegPekaruHozz);
+            this.tab1.Controls.Add(this.bttn_pekaruTorol);
+            this.tab1.Controls.Add(this.bttn_peksegHozz);
+            this.tab1.Controls.Add(this.checkBox_Laktoz);
+            this.tab1.Controls.Add(this.bttn_pekaruHozza);
+            this.tab1.Controls.Add(this.num_ar);
+            this.tab1.Controls.Add(this.txt_pekaruNev);
             this.tab1.Location = new System.Drawing.Point(4, 22);
             this.tab1.Name = "tab1";
             this.tab1.Padding = new System.Windows.Forms.Padding(3);
@@ -92,117 +92,119 @@
             this.tab2.Text = "Statisztika";
             this.tab2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txt_pekaruNev
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txt_pekaruNev.Location = new System.Drawing.Point(4, 20);
+            this.txt_pekaruNev.Name = "txt_pekaruNev";
+            this.txt_pekaruNev.Size = new System.Drawing.Size(120, 20);
+            this.txt_pekaruNev.TabIndex = 0;
             // 
-            // numericUpDown1
+            // num_ar
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(4, 46);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.num_ar.Location = new System.Drawing.Point(4, 43);
+            this.num_ar.Name = "num_ar";
+            this.num_ar.Size = new System.Drawing.Size(120, 20);
+            this.num_ar.TabIndex = 1;
             // 
-            // button1
+            // bttn_pekaruHozza
             // 
-            this.button1.Location = new System.Drawing.Point(7, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bttn_pekaruHozza.Location = new System.Drawing.Point(4, 95);
+            this.bttn_pekaruHozza.Name = "bttn_pekaruHozza";
+            this.bttn_pekaruHozza.Size = new System.Drawing.Size(120, 23);
+            this.bttn_pekaruHozza.TabIndex = 2;
+            this.bttn_pekaruHozza.Text = "Hozzáadás";
+            this.bttn_pekaruHozza.UseVisualStyleBackColor = true;
+            this.bttn_pekaruHozza.Click += new System.EventHandler(this.bttn_pekaruHozza_Click);
             // 
-            // checkBox1
+            // checkBox_Laktoz
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(4, 115);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox_Laktoz.AutoSize = true;
+            this.checkBox_Laktoz.Location = new System.Drawing.Point(10, 72);
+            this.checkBox_Laktoz.Name = "checkBox_Laktoz";
+            this.checkBox_Laktoz.Size = new System.Drawing.Size(92, 17);
+            this.checkBox_Laktoz.TabIndex = 3;
+            this.checkBox_Laktoz.Text = "Laktózmentes";
+            this.checkBox_Laktoz.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // bttn_peksegHozz
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(176, 6);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.bttn_peksegHozz.Location = new System.Drawing.Point(4, 224);
+            this.bttn_peksegHozz.Name = "bttn_peksegHozz";
+            this.bttn_peksegHozz.Size = new System.Drawing.Size(120, 23);
+            this.bttn_peksegHozz.TabIndex = 7;
+            this.bttn_peksegHozz.Text = "Hozzáadás";
+            this.bttn_peksegHozz.UseVisualStyleBackColor = true;
+            this.bttn_peksegHozz.Click += new System.EventHandler(this.bttn_peksegHozz_Click);
             // 
-            // listView2
+            // bttn_pekaruTorol
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(303, 7);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(121, 97);
-            this.listView2.TabIndex = 5;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.bttn_pekaruTorol.Location = new System.Drawing.Point(222, 43);
+            this.bttn_pekaruTorol.Name = "bttn_pekaruTorol";
+            this.bttn_pekaruTorol.Size = new System.Drawing.Size(75, 46);
+            this.bttn_pekaruTorol.TabIndex = 8;
+            this.bttn_pekaruTorol.Text = "Törlés";
+            this.bttn_pekaruTorol.UseVisualStyleBackColor = true;
+            this.bttn_pekaruTorol.Click += new System.EventHandler(this.bttn_pekaruTorol_Click);
             // 
-            // listView3
+            // bttn_peksegPekaruHozz
             // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(430, 6);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(121, 97);
-            this.listView3.TabIndex = 6;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.bttn_peksegPekaruHozz.Location = new System.Drawing.Point(675, 224);
+            this.bttn_peksegPekaruHozz.Name = "bttn_peksegPekaruHozz";
+            this.bttn_peksegPekaruHozz.Size = new System.Drawing.Size(75, 58);
+            this.bttn_peksegPekaruHozz.TabIndex = 10;
+            this.bttn_peksegPekaruHozz.Text = "+";
+            this.bttn_peksegPekaruHozz.UseVisualStyleBackColor = true;
+            this.bttn_peksegPekaruHozz.Click += new System.EventHandler(this.bttn_peksegPekaruHozz_Click);
             // 
-            // button2
+            // txt_peksegNev
             // 
-            this.button2.Location = new System.Drawing.Point(176, 115);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(257, 115);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(341, 115);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(422, 115);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(519, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
+            this.txt_peksegNev.Location = new System.Drawing.Point(4, 197);
+            this.txt_peksegNev.Name = "txt_peksegNev";
+            this.txt_peksegNev.Size = new System.Drawing.Size(120, 20);
+            this.txt_peksegNev.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Pékáru hozzáadás";
+            this.label1.Text = "Pékáruk";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Pékségek";
+            // 
+            // list_pekaru
+            // 
+            this.list_pekaru.FormattingEnabled = true;
+            this.list_pekaru.Location = new System.Drawing.Point(323, 20);
+            this.list_pekaru.Name = "list_pekaru";
+            this.list_pekaru.Size = new System.Drawing.Size(384, 95);
+            this.list_pekaru.TabIndex = 14;
+            // 
+            // list_pekseg
+            // 
+            this.list_pekseg.FormattingEnabled = true;
+            this.list_pekseg.Location = new System.Drawing.Point(222, 197);
+            this.list_pekseg.Name = "list_pekseg";
+            this.list_pekseg.Size = new System.Drawing.Size(172, 173);
+            this.list_pekseg.TabIndex = 15;
+            this.list_pekseg.SelectedIndexChanged += new System.EventHandler(this.list_pekseg_SelectedIndexChanged);
+            // 
+            // list_peksegPekaru
+            // 
+            this.list_peksegPekaru.FormattingEnabled = true;
+            this.list_peksegPekaru.Location = new System.Drawing.Point(400, 197);
+            this.list_peksegPekaru.Name = "list_peksegPekaru";
+            this.list_peksegPekaru.Size = new System.Drawing.Size(269, 95);
+            this.list_peksegPekaru.TabIndex = 16;
             // 
             // Form1
             // 
@@ -215,7 +217,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tab1.ResumeLayout(false);
             this.tab1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_ar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,19 +227,19 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tab1;
         private System.Windows.Forms.TabPage tab2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_peksegNev;
+        private System.Windows.Forms.Button bttn_peksegPekaruHozz;
+        private System.Windows.Forms.Button bttn_pekaruTorol;
+        private System.Windows.Forms.Button bttn_peksegHozz;
+        private System.Windows.Forms.CheckBox checkBox_Laktoz;
+        private System.Windows.Forms.Button bttn_pekaruHozza;
+        private System.Windows.Forms.NumericUpDown num_ar;
+        private System.Windows.Forms.TextBox txt_pekaruNev;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox list_pekaru;
+        private System.Windows.Forms.ListBox list_peksegPekaru;
+        private System.Windows.Forms.ListBox list_pekseg;
     }
 }
 
