@@ -89,5 +89,104 @@ namespace pekseg
                 list_pekaru.Items.RemoveAt(list_pekaru.SelectedIndex);
             }
         }
+
+        private void list_statisztika_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (list_statisztika.SelectedIndex != -1)
+            {
+                label_peksegNev.Text = "";
+                label_alapitas.Text = "Alapítva: ";
+                label_pekaruk.Text = "Pékáruk: ";
+                label_atlagosAr.Text = "Átlagos ár: ";
+                label_legolcsobb.Text = "Legolcsóbb termék: ";
+                label_legdragabb.Text = "Legdrágább termék: ";
+                label_laktoz.Text = "Laktózmentes termék: ";
+                
+                label_peksegNev.Text = ((Pekseg)list_statisztika.SelectedItem).Nev;
+                label_alapitas.Text += ((Pekseg)list_statisztika.SelectedItem).Alapitva;
+                label_pekaruk.Text += ((Pekseg)list_statisztika.SelectedItem).Termekek.Count + " db";
+                label_atlagosAr.Text += Atlagar() + " Ft";
+                label_legolcsobb.Text += Legolcsobb();
+                label_legdragabb.Text += Legdragabb();
+                label_laktoz.Text += LaktozMentes();
+            }
+        }
+
+        private double Atlagar()
+        {
+            double sum = 0;
+            
+            foreach (var pekaru in ((Pekseg)list_statisztika.SelectedItem).Termekek)
+            {
+                sum += pekaru.Ar;
+            }
+
+            return sum / ((Pekseg)list_statisztika.SelectedItem).Termekek.Count;
+        }
+
+        private Pekaru Legolcsobb()
+        {
+            Pekaru legolcsobb = ((Pekseg)list_statisztika.SelectedItem).Termekek[0];
+
+
+            foreach (var pekaru in ((Pekseg)list_statisztika.SelectedItem).Termekek)
+            {
+                if (pekaru.Ar < legolcsobb.Ar)
+                {
+                    legolcsobb = pekaru;
+                }
+            }
+
+            return legolcsobb;
+        }
+
+        private Pekaru Legdragabb()
+        {
+            Pekaru legdragabb = ((Pekseg)list_statisztika.SelectedItem).Termekek[0];
+
+
+            foreach (var pekaru in ((Pekseg)list_statisztika.SelectedItem).Termekek)
+            {
+                if (pekaru.Ar > legdragabb.Ar)
+                {
+                    legdragabb = pekaru;
+                }
+            }
+
+            return legdragabb;
+        }
+
+        private string LaktozMentes()
+        {
+            try
+            {
+                int laktozmentesdb = 0;
+
+                foreach (var pekaru in ((Pekseg)list_statisztika.SelectedItem).Termekek)
+                {
+                    if (pekaru.Laktozmentes == true)
+                    {
+                        laktozmentesdb++;
+                    }
+                }
+
+                return laktozmentesdb + " db, " + Math.Ceiling(Convert.ToDecimal(100 / ((Pekseg)list_statisztika.SelectedItem).Termekek.Count) * laktozmentesdb) + "%";
+            }
+            catch
+            {
+                return "0 db, 0%";
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            list_statisztika.Items.Clear();
+            label_peksegNev.Text = "";
+            
+            foreach (var pekseg in list_pekseg.Items)
+            {
+                list_statisztika.Items.Add((Pekseg)pekseg);
+            }
+        }
     }
 }
